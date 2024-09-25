@@ -11,7 +11,7 @@ This project implements a visual pipeline builder with backend validation to ens
 - **Pipeline Builder**: Provides a user-friendly interface for constructing pipelines by dragging and dropping various node types.
 - **Node Types**: Offers a diverse range of node types to represent different operations or data sources within the pipeline.
 - **Visualization**:  Displays the pipeline structure visually, making it easy to understand and identify potential issues.
-- **DAG Verification**: VEnsures that the created pipelines are valid Directed Acyclic Graphs (DAGs).
+- **DAG Verification**: Ensures that the created pipelines are valid Directed Acyclic Graphs (DAGs).
 
 
 
