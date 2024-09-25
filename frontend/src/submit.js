@@ -18,17 +18,17 @@ export const SubmitButton = () => {
         fontSize: 22
       }
     
-      // Function to handle the submit action
+      
       const handleSubmit = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:8000/check-graph/', {
+          const response = await fetch('http://127.0.0.1:8000/pipelines/parse', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              nodes: nodes.map((node) => ({ id: node.id, data: node.data })), // Send node ID and data
-              edges: edges.map((edge) => ({ source: edge.source, target: edge.target })), // Send source and target of edges
+              nodes: nodes.map((node) => ({ id: node.id, data: node.data })),
+              edges: edges.map((edge) => ({ source: edge.source, target: edge.target })),
             }),
           });
     

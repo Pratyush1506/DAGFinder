@@ -38,8 +38,12 @@ class GraphOutput(BaseModel):
     num_edges: int
     is_dag: bool
 
-# Route definitions
-@app.post("/check-graph/", response_model=GraphOutput)
+
+@app.get('/')
+def read_root():
+    return {'Ping': 'Pong'}
+
+@app.post("/pipelines/parse", response_model=GraphOutput)
 async def check_graph(graph: GraphInput):
     G = nx.DiGraph()
     
@@ -60,14 +64,6 @@ async def check_graph(graph: GraphInput):
         num_edges=num_edges,
         is_dag=is_dag
     )
-
-@app.get('/')
-def read_root():
-    return {'Ping': 'Pong'}
-
-@app.get('/pipelines/parse')
-def parse_pipeline(pipeline: str = Form(...)):
-    return {'status': 'parsed'}
 
 # This block will only execute if this script is run directly
 # This is where you start the FastAPI application using uvicorn

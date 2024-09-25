@@ -53,7 +53,7 @@ export const TextNode = ({ id, data }) => {
       prevTextRef.current = newText; 
     }
   };
-
+  
   const extractVariables = (text) => {
     const regex = /\{\{([^}]+)\}\}/g;
     const matches = [];
